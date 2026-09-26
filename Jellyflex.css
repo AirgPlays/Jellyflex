@@ -1,0 +1,321 @@
+
+#loginPage {
+    background-image: url('/Branding/Splashscreen?format=jpg&foregroundLayer=1');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 20px;
+
+    position: relative;
+    overflow: auto;
+}
+
+#loginPage::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.25)
+        );
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+#loginPage > * {
+    position: relative;
+    z-index: 1;
+}
+
+#loginPage .padded-left.padded-right.padded-bottom-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+#loginPage .visualLoginForm {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+    animation: fadeIn 0.6s ease;
+}
+
+
+#loginPage .visualLoginForm > h1 {
+    font-size: 0;
+    margin-bottom: 25px;
+}
+
+#loginPage .visualLoginForm > h1::after {
+    content: "Who's watching?";
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+}
+
+
+#loginPage #divUsers {
+    display: flex !important;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 25px;
+
+    width: 100%;
+    margin: 0 auto 20px auto;
+}
+
+
+#loginPage #divUsers .card {
+    width: 135px !important;
+    max-width: 135px !important;
+
+    margin: 0 !important;
+
+    cursor: pointer;
+}
+
+
+#loginPage #divUsers .cardBox {
+    margin: 0 !important;
+}
+
+
+#loginPage #divUsers .cardScalable,
+#loginPage #divUsers .cardImageContainer {
+    border-radius: 50% !important;
+}
+
+
+
+#loginPage #divUsers .cardScalable {
+    overflow: hidden;
+
+    border: 3px solid transparent;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.55);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+
+#loginPage #divUsers .card:hover .cardScalable {
+    transform: scale(1.08);
+
+    border-color: #09a8e2;
+
+    box-shadow:
+        0 0 22px rgba(9, 168, 226, 0.55);
+}
+
+
+
+#loginPage #divUsers .cardText {
+    color: white !important;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-align: center;
+
+    margin-top: 9px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+
+#loginPage .btnManual {
+    width: 100%;
+    max-width: 380px;
+
+    margin: 25px auto 0 auto !important;
+
+    padding: 13px 20px !important;
+
+    background: rgba(0, 0, 0, 0.42) !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+
+    border-radius: 10px !important;
+
+    color: white !important;
+
+    font-size: 15px !important;
+    font-weight: 600 !important;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#loginPage .btnManual:hover {
+    background: rgba(9, 168, 226, 0.25) !important;
+
+    border-color: #09a8e2 !important;
+
+    transform: translateY(-1px);
+}
+
+#loginPage .manualLoginForm,
+#loginPage .readOnlyContent {
+    width: 100%;
+    max-width: 380px;
+
+    background: rgba(0, 0, 0, 0.45) !important;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.55);
+
+    box-sizing: border-box;
+
+    animation: fadeIn 0.4s ease;
+}
+
+#loginPage input[type="text"],
+#loginPage input[type="password"] {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #fff;
+
+    border: 1px solid rgba(9, 168, 226, 0.75);
+
+    border-radius: 8px;
+
+    padding: 11px;
+
+    margin-top: 8px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#loginPage input[type="text"]:focus,
+#loginPage input[type="password"]:focus {
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.11);
+
+    border-color: #09a8e2;
+
+    box-shadow:
+        0 0 0 2px rgba(9, 168, 226, 0.18);
+}
+
+
+
+#loginPage .emby-button {
+    margin-top: 16px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 15px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* Main sign-in button */
+#loginPage .manualLoginForm .button-submit {
+    background: #09a8e2 !important;
+
+    color: white !important;
+}
+
+#loginPage .checkboxLabel {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+
+    #loginPage {
+        padding: 15px;
+    }
+
+    #loginPage .visualLoginForm > h1::after {
+        font-size: 26px;
+    }
+
+    #loginPage #divUsers {
+        gap: 18px;
+    }
+
+    #loginPage #divUsers .card {
+        width: 105px !important;
+        max-width: 105px !important;
+    }
+
+    #loginPage .manualLoginForm,
+    #loginPage .readOnlyContent {
+        max-width: 100%;
+
+        padding: 22px;
+
+        margin: 0 10px;
+    }
+
+    #loginPage .btnManual {
+        max-width: 100%;
+    }
+}
